@@ -2,6 +2,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+
 import static org.hamcrest.Matchers.equalTo;
 
 public class CheckUrl {
