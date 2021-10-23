@@ -26,5 +26,7 @@ public class CheckUrl {
 
         RestAssured.given().get("http://ergast.com/api/f1/2017/circuits.json").then().statusCode(200)
                 .body("MRData.CircuitTable.Circuits.circuitId[5]", equalTo(EXPECTED_FIFTH_COUNTER));
+
+
     }
 }
