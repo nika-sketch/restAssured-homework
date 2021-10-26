@@ -1,6 +1,7 @@
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import java.util.LinkedHashMap;
@@ -29,7 +30,7 @@ public class SecondTaskRest {
         assert lastRecordNameValue.equals(lastValue);
 
         List<String> allRecordsTime = jsonPath.get("records.created");
-        
+
         int currentTime = 2021;
         boolean temp = false;
         for (int i = 0; i < allRecordsTime.size(); i++) {
@@ -42,5 +43,20 @@ public class SecondTaskRest {
         Response secondResponse = RestAssured.get("https://reqres.in/api/users ").then()
                 .statusCode(200).extract().response();
 
+    }
+
+    @Test
+    public void secondTest() {
+        Response secondResponse = RestAssured.get("https://reqres.in/api/users").then()
+                .statusCode(200).extract().response();
+
+        JSONObject request = new JSONObject();
+        request.put( "name", "morpheus");
+        request.put( "job","leader");
+
+        RestAssured.given().
+                body(request.toJSONString()).
+                when().
+                post("https://reqres.in/api/users");
     }
 }
