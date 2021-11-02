@@ -80,3 +80,16 @@
     </dependencies>
 
 </project>
+
+<!--<shopping>-->
+<!--<category type="groceries">-->
+<!--    <item>-->
+<!--        <name>Chocolate</name>-->
+<!--        <price>10</price>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <name>Juice</name>-->
+<!--        <price>20</price>-->
+<!--    </item>-->
+<!--</category>-->
+<!--</shopping>-->

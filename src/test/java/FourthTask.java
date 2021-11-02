@@ -14,7 +14,7 @@ public class FourthTask {
 
     NodeChildrenImpl sCode = RestAssured.given().when()
             .get("http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfContinentsByName")
-            .then().extract().path("ArrayOftContinent.tContinent.sCode");
+            .then().extract().path("ArrayOftContinent.tContinent");
 
     @Test
     public void checkCountries() {
@@ -63,6 +63,11 @@ public class FourthTask {
     @Test
     public void validateLastContinent() {
         assert "The Americas".equals(countries.get(5).toString());
+    }
+
+    @Test
+    public void c() {
+        System.out.println(sCode.size());
     }
 }
 
